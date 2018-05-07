@@ -61,7 +61,12 @@ function chart (id, csv) {
     },
     point: { show: false },
     axis: { x: { show: false } },
-    legend: { show: showLegend }
+    legend: { show: showLegend },
+    tooltip: {
+      format: {
+        title: x => new Date(x).toDateString()
+      }
+    }
   }
 
   c3.generate(opts)
